@@ -1,11 +1,11 @@
 package util;
 
-import java.io.File;
+import java.io.*;
 import java.util.*;
 
 public class IOUtil 
 {
-	/*
+	/**
 	 * @param folderName
 	 *        待删除的文件或目录
 	 **/
@@ -48,6 +48,35 @@ public class IOUtil
 					}					
 				}
 			}
+		}
+	}
+
+	/**
+	 * @param filePath
+	 * 			写入的文件路径
+	 * @param text
+	 * 			待写的文本内容
+	 * @param IOException
+	 * 			文件写失败时触发的异常
+	 * **/
+	public static void appendText(String filePath, String text) throws IOException
+	{
+		File fl = new File(filePath);
+		File parentDir = fl.getParentFile();
+		if (parentDir.exists()==false)
+		{
+			parentDir.mkdirs();
+		}
+
+		FileWriter writer=null;
+		try
+		{
+			writer = new FileWriter(fl, true);
+			writer.write(text);
+		}
+		finally
+		{
+			writer.close();
 		}
 	}
 }
