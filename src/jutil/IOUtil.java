@@ -1,4 +1,4 @@
-package util;
+package jutil;
 
 import java.io.*;
 import java.util.*;
