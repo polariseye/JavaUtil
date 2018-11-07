@@ -3,7 +3,7 @@ package jutil;
 import java.io.*;
 import java.util.*;
 
-public class IOUtil 
+public class ioUtil 
 {
 	/**
 	 * @param folderName
@@ -77,6 +77,55 @@ public class IOUtil
 		finally
 		{
 			writer.close();
+		}
+	}
+	
+	/**
+	 * @param String
+	 * 		需要读取的文件
+	 * @return String
+	 * 		文件数据
+	 * */
+	public static String ReadAllString(String filePath) throws IOException,FileNotFoundException
+	{
+		File file=new File(filePath);
+		FileReader reader= new FileReader(file);
+		try
+		{
+			char[] result=new char[(int)file.length()];
+			reader.read(result, 0, result.length);
+			return new String(result);
+		}
+		finally
+		{
+			reader.close();
+		}
+	}
+	
+	/**
+	 * @param filePath
+	 *  		文件路径
+	 * @return byte[]
+	 * 			获取到给字节数据
+	 * @exception IOException
+	 * 			文件读取出错
+	 * @exception FileNotFoundException
+	 * 			文件未找到
+	 * */
+	public static byte[] ReaderAllBytes(String filePath) throws IOException,FileNotFoundException
+	{
+		File file=new File(filePath);
+		FileInputStream inputStream=new FileInputStream(file);
+		try
+		{
+			byte[] result=new byte[(int)file.length()];
+			inputStream.read(result, 0, result.length);
+
+			return result;
+		}
+		finally
+		{
+			inputStream.close();			
 		}
 	}
 }
