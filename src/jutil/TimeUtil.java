@@ -46,4 +46,24 @@ public class TimeUtil {
 		SimpleDateFormat fmt=new SimpleDateFormat("yyyy-MM-dd");		
 		return fmt.format(val);
 	}
+	
+	/**
+	 * 把字符串转换为时间,格式为:yyyy-MM-dd
+	 * @param val
+	 * 			时间参数
+	 * */
+	public static Date ToDate(String val) throws Exception{
+		SimpleDateFormat fmt=new SimpleDateFormat("yyyy-MM-dd");		
+		return fmt.parse(val);
+	}
+	
+	/**
+	 * 把字符串转换为时间,格式为:yyyy-MM-dd HH:mm:ss
+	 * @param val
+	 * 			时间参数
+	 * */
+	public static Date ToDateTime(String val) throws Exception{
+		SimpleDateFormat fmt=new SimpleDateFormat("yyyy-MM-dd");		
+		return fmt.parse(val);
+	}
 }
