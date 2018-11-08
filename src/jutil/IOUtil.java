@@ -3,7 +3,7 @@ package jutil;
 import java.io.*;
 import java.util.*;
 
-public class ioUtil 
+public class IOUtil 
 {
 	/**
 	 * @param folderName
